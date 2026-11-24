@@ -1,28 +1,18 @@
-﻿using System.IO;
-using ClassIsland.Core;
+﻿using ClassIsland.Core;
 using ClassIsland.Core.Abstractions;
 using ClassIsland.Core.Attributes;
-using ClassIsland.Core.Extensions.Registry;
-using ClassIsland.Shared.Helpers;
+using ClassIsland.Core.Controls;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PluginWithSettingsPage.Models;
-using PluginWithSettingsPage.Views.SettingsPages;
 
-namespace PluginWithSettingsPage;
+namespace BACI.PluginForClassisland;
 
 [PluginEntrance]
 public class Plugin : PluginBase
 {
-    public Settings Settings { get; set; } = new();
-
     public override void Initialize(HostBuilderContext context, IServiceCollection services)
     {
-        Settings = ConfigureFileHelper.LoadConfig<Settings>(Path.Combine(PluginConfigFolder, "Settings.json"));
-        Settings.PropertyChanged += (sender, args) =>
-        {
-            ConfigureFileHelper.SaveConfig<Settings>(Path.Combine(PluginConfigFolder, "Settings.json"), Settings);
-        };
-        services.AddSettingsPage<ExampleSettingsPage>();
+        AppBase.Current.AppStarted += async (_, _) => 
+            await CommonTaskDialogs.ShowDialog("Hello world!", "Hello from BACI.PluginForClassisland!");
     }
 }

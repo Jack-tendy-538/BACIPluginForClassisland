@@ -1,8 +1,13 @@
-id: examples.pluginWithSettingsPage  # 插件 id
-name: 设置页面示例插件  # 插件名称
-description: 注册了若干设置页面的插件，并可以加载和保存插件设置。  # 插件描述
-entranceAssembly: "PluginWithSettingsPage.dll"  # 插件入口程序集
-url: https://github.com/ClassIsland/ExamplePlugins  # 插件 Url
-author: HelloWRC  # 插件作者
-version: 1.0.0.0
-apiVersion: 1.4.2.0
+# nonk8s
+# 插件清单文件使用 YAML 格式存储。
+# YAML 教程：https://www.runoob.com/w3cnote/yaml-intro.html
+# 插件清单格式：https://docs.classisland.tech/zh-cn/latest/dev/plugins/create-project/#%E6%8F%92%E4%BB%B6%E6%B8%85%E5%8D%95%E6%96%87%E4%BB%B6
+
+id: BACI.PluginForClassisland
+name: BACI.PluginForClassisland
+description: 插件描述
+entranceAssembly: "BACI.PluginForClassisland.dll"
+url: https://example.com
+version: 0.0.0.0
+apiVersion: 2.0.0.0
+author: 无名氏
